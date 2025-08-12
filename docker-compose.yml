@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: flasq-chatbot
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      # For Docker Desktop on Windows/macOS, containers reach host via host.docker.internal
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+    restart: unless-stopped
+
