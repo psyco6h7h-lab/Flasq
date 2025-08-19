@@ -1,2 +1,2 @@
-web: streamlit run Chat_bot.py --server.port $PORT --server.address 0.0.0.0
+web: python -m streamlit run Chat_bot.py --server.port $PORT --server.address 0.0.0.0
 
